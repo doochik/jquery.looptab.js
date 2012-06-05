@@ -1,5 +1,13 @@
 (function(/**jQuery*/$) {
 
+    /**
+     * Capture tab key navigation inside given element
+     * @see https://github.com/doochik/jquery.looptab.js
+     * @author Alexey Androsov <doochik@ya.ru>
+     * @licence GPLv3
+     * @version 0.1
+     */
+
     $.fn.captureTab = function() {
         var capture = [];
         var self = this;
