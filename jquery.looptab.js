@@ -1,10 +1,9 @@
 (function(/**jQuery*/$) {
     /**
-     * Capture tab key navigation inside given element.
-     * @description
-     * This plugin can cycle tabulation inside given element (usually modal popup),
-     * so tab key will be move cursor in this way: inside element -> browser toolbars -> inside element.
-     * This plugin works setting tabindex to -1 to all active element outside given element.
+     * jQuery plugin to capture tab key navigation inside given element.
+     * Plugin cycles tabulation inside the given element (usually a modal popup),
+     * Acts the following way: tab key moves cursor inside element -> browser toolbar(-s) -> inside element.
+     * 
      * @see https://github.com/doochik/jquery.looptab.js
      * @author Alexey Androsov <doochik@ya.ru>
      * @licence GPLv3/MIT
@@ -12,7 +11,8 @@
      */
 
     /**
-     * Capture tab key navigation inside given element.
+     * Captures tab key navigation inside given element.
+     * @description Sets tabindex to -1 for all active elements outside the given element.
      */
     $.fn.captureTab = function() {
         var capture = [];
@@ -32,7 +32,8 @@
     };
 
    /**
-     * Release tab key navigation.
+     * Releases tab key navigation.
+     * @description According to saved values from $.captureTab restores tabindex to active elements on the page.
      */
     $.fn.releaseTab = function() {
         var capture = this.data('looptab-capture');
