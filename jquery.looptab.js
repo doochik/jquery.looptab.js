@@ -33,7 +33,7 @@
 
    /**
      * Releases tab key navigation.
-     * @description According to saved values from $.captureTab restores tabindex to active elements on the page.
+     * @description According to saved values restores tabindex to active elements on the page from $.captureTab.
      */
     $.fn.releaseTab = function() {
         var capture = this.data('looptab-capture');
