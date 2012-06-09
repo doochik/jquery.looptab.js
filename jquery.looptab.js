@@ -17,7 +17,7 @@
     $.fn.captureTab = function() {
         var capture = [];
         var self = this;
-        $('a, [tabindex]').each(function() {
+        $('a, button, input, textarea, [tabindex]').each(function() {
             for (var i = 0, l = self.length; i < l; i++ ) {
                 if (!$.contains(self[i], this)) {
                     capture.push({
