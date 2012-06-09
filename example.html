@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="http://yandex.st/jquery/1.7.2/jquery.js"></script>
+    <script src="jquery.looptab.js"></script>
+</head>
+<body>
+<h1>Example page for <a href="https://github.com/doochik/jquery.looptab.js" tabindex="-1">jquery.looptab.js</a> plugin</h1>
+<ul>
+    <li>
+        Before capture: tab key will move cursor in follow way:
+        Input with tabindex
+        &rarr;DIV with tabindex
+        &rarr; Input in popup
+        &rarr; Button in popup
+        &rarr; Link
+        &rarr; Input without tabindex
+        &rarr; Textarea
+        &rarr; Button
+        &rarr; <b>Broswer toolbar(-s)</b> and then returns to page
+    </li>
+    <li>
+        After capture: tab key will move cursor in follow way:
+        Input in popup
+        &rarr; Button in popup
+        &rarr; <b>Broswer toolbar(-s)</b> and then returns to page
+    </li>
+</ul>
+<div>
+    Actions:
+    <button onclick="$('.mypopup').captureTab();$(this).attr('disabled', 'true').next('button').removeAttr('disabled', '')" tabindex="-1">Capture tab</button>
+    <button onclick="$('.mypopup').releaseTab();$(this).attr('disabled', 'true').prev('button').removeAttr('disabled', '')" tabindex="-1" disabled="true">Release tab</button>
+</div>
+<div style="border: 1px solid #CCC">
+    <p>
+        Link: <a href="http://www.yandex.com" target="_blank">Yandex</a>
+    </p>
+    <p>
+        Input without tabindex: <input name="input1"/>
+    </p>
+    <p>
+        Input with tabindex: <input name="input2" tabindex="1"/>
+    </p>
+    <p>
+        Textarea: <textarea name="textarea"></textarea>
+    </p>
+    <p>
+        Button: <button>my button</button>
+    </p>
+    <div tabindex="2">DIV with tabindex</div>
+</div>
+<div class="mypopup" style="border: 1px solid #000">
+    <h2>Popup</h2>
+    <p>
+        Input in popup: <input tabindex="3"/>
+    </p>
+    <p>
+        Button in popup: <button tabindex="4">my button inside popup</button>
+    </p>
+</div>
+
+</body>
+</html>
